@@ -1,0 +1,6 @@
+1. 도트 타일맵으로 쉽게 준비하기
+- Rule Tile: 스프라이트 모양에 맞게 방향 규칙 설정
+- 타일맵 두 개 이상 작업할 땐 Focus On 기능 이용
+- Rule Tile -> Output -> Animation: 애니메이션 적용 가능
+- Tilemap Collider는 Composite Collider와 사용하면 좋다.
+- Mask Interaction으로 Tilemap 보이지 않게 가능
