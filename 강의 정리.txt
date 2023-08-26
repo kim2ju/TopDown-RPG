@@ -4,3 +4,7 @@
 - Rule Tile -> Output -> Animation: 애니메이션 적용 가능
 - Tilemap Collider는 Composite Collider와 사용하면 좋다.
 - Mask Interaction으로 Tilemap 보이지 않게 가능
+
+2. 쯔꾸르식 액션 구현하기
+- Settings -> Transition Duration=0으로 하면 깔끔
+- Transition을 연속적으로 실행하면 애니메이션이 작동하지 않음
