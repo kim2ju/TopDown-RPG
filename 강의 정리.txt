@@ -11,3 +11,5 @@
 
 3. 대화창 UI 구축하기
 - Sprite Editor에서 Border 설정 -> Image Type Sliced로 변경: 이미지 크기 조정할 때 변하지 않을 부분 지정 가능
+
+4. 대화 시스템 구현하기
