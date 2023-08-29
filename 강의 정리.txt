@@ -17,3 +17,7 @@
 5. 퀘스트 시스템 구현하기
 
 6. 대화 애니메이션 느낌있게 만들기
+
+7. 서브메뉴와 저장기능 만들기
+- PlayerPrefs: Company, Product Name으로 레지스트리에 저장
+- 레지스트리 경로: HKEY_CURRENT_USER/Software
