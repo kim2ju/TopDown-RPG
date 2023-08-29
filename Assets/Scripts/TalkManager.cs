@@ -18,10 +18,20 @@ public class TalkManager : MonoBehaviour
 
     void GenerateData()
     {
-        talkData.Add(1000, new string[] { "안녕?:0", "여기 처음 왔구나?:1" });
-        talkData.Add(2000, new string[] { "나는 NPC B이다.:2" });
-        talkData.Add(100, new string[] { "평범한 나무상자다." });
-        talkData.Add(200, new string[] { "누군가 사용했던 흔적이 있는 책상이다." });
+        talkData.Add(1000, new string[] { "안녕?:0","여기 처음 왔구나?:1" });
+        talkData.Add(2000, new string[] { "이 호수는 정말 아름답지?:0, 사실 이 호수에는 무언가의 비밀이 있다고 해.:2" });
+        talkData.Add(3000, new string[] { "평범한 나무상자다." });
+        talkData.Add(4000, new string[] { "누군가 사용했던 흔적이 있는 책상이다." });
+
+        talkData.Add(1000 + 10, new string[] { "어서 와.:0", "이 마을에는 전설이 있어.:1", "오른쪽 호수 쪽에 루도에게 물어봐.:0" });
+        
+        talkData.Add(2000 + 11, new string[] { "이 호수의 전설을 들으러 온 거야?:0", "그럼 내 집 근처에 떨어진 동전을 갖고 오면 알려줄게.:1" });
+
+        talkData.Add(1000 + 20, new string[] { "루도의 동전?:0", "나는 잘 모르겠는데?:1" });
+        talkData.Add(2000 + 20, new string[] { "찾으면 꼭 좀 가져다 줘.:1" });
+        talkData.Add(5000 + 20, new string[] { " 동전을 찾았다." });
+
+        talkData.Add(2000 + 21, new string[] { "찾아줘서 고마워.:1" });
 
         portraitData.Add(1000 + 0, portraitArr[0]);
         portraitData.Add(1000 + 1, portraitArr[1]);
@@ -35,14 +45,18 @@ public class TalkManager : MonoBehaviour
 
     public string GetTalk(int id, int talkIndex)
     {
+        if (!talkData.ContainsKey(id))
+        {
+            if (!talkData.ContainsKey(id - id % 10))
+                return GetTalk(id - id % 100, talkIndex);
+            else
+                return GetTalk(id - id % 10, talkIndex);
+        }
+
         if(talkIndex == talkData[id].Length)
-        {
             return null;
-        }
         else
-        {
             return talkData[id][talkIndex];
-        }
     }
 
     public Sprite GetPortrait(int id, int portraitIndex)
